@@ -2,7 +2,7 @@ class মাপ {
     constructor(অংশ, মান) {
         this.অংশ = অংশ
         this.মান = মান
-        this.মাপসমূহ = []
+        this.দাগসমূহ = []
     }
 }
 
@@ -26,9 +26,10 @@ class দাগ {
             // add polar coordinate to start
             শেষ = [শুরু[0] + (শেষ[0] * Math.cos(শেষ[1])), শুরু[1] + (শেষ[0] * Math.sin(শেষ[1]))]
         }
-        ঘুরবে = this.ঘুরবে(শুরু, শেষ)
-        beginShape(শুরু[0], শুরু[1])
-        quadraticVertex(ঘুরবে[0], ঘুরবে[শেষ], শেষ[0], শেষ[1])
+        let ঘুরবে = this.ঘুরবে(শুরু, শেষ)
+        beginShape()
+        vertex(শুরু[0], শুরু[1])
+        quadraticVertex(ঘুরবে[0], ঘুরবে[1], শেষ[0], শেষ[1])
         endShape()
     }
 }
